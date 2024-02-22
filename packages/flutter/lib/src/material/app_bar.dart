@@ -179,7 +179,7 @@ class AppBar extends StatefulWidget implements PreferredSizeWidget {
   /// If [elevation] is specified, it must be non-negative.
   ///
   /// Typically used in the [Scaffold.appBar] property.
-  AppBar({
+  AppBar(Text text, {
     super.key,
     this.leading,
     this.automaticallyImplyLeading = true,
@@ -209,7 +209,7 @@ class AppBar extends StatefulWidget implements PreferredSizeWidget {
     this.titleTextStyle,
     this.systemOverlayStyle,
     this.forceMaterialTransparency = false,
-    this.clipBehavior,
+    this.clipBehavior, required String Text, required Container body,
   }) : assert(elevation == null || elevation >= 0.0),
        preferredSize = _PreferredAppBarSize(toolbarHeight, bottom?.preferredSize.height);
 

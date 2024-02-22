@@ -5,6 +5,8 @@
 import 'dart:math' as math;
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/src/material/colors.dart';
+import 'package:flutter/src/widgets/image.dart';
 
 import 'basic_types.dart';
 import 'border_radius.dart';
@@ -84,7 +86,7 @@ class BoxDecoration extends Decoration {
   /// * If [boxShadow] is null, this decoration does not paint a shadow.
   /// * If [gradient] is null, this decoration does not paint gradients.
   /// * If [backgroundBlendMode] is null, this decoration paints with [BlendMode.srcOver]
-  const BoxDecoration({
+  const BoxDecoration(required MaterialAccentColor color, {
     this.color,
     this.image,
     this.border,
@@ -92,7 +94,7 @@ class BoxDecoration extends Decoration {
     this.boxShadow,
     this.gradient,
     this.backgroundBlendMode,
-    this.shape = BoxShape.rectangle,
+    this.shape = BoxShape.rectangle, required Image child,
   }) : assert(
          backgroundBlendMode == null || color != null || gradient != null,
          "backgroundBlendMode applies to BoxDecoration's background color or "

@@ -14,6 +14,7 @@ import 'dart:ui' as ui show
   lerpDouble;
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/src/material/colors.dart';
 
 import 'basic_types.dart';
 import 'colors.dart';
@@ -475,7 +476,7 @@ class TextStyle with Diagnosticable {
   /// The `package` argument must be non-null if the font family is defined in a
   /// package. It is combined with the `fontFamily` argument to set the
   /// [fontFamily] property.
-  const TextStyle({
+  const TextStyle(required MaterialColor color, {
     this.inherit = true,
     this.color,
     this.backgroundColor,
@@ -501,7 +502,7 @@ class TextStyle with Diagnosticable {
     String? fontFamily,
     List<String>? fontFamilyFallback,
     String? package,
-    this.overflow,
+    this.overflow, required Type child,
   }) : fontFamily = package == null ? fontFamily : 'packages/$package/$fontFamily',
        _fontFamilyFallback = fontFamilyFallback,
        _package = package,

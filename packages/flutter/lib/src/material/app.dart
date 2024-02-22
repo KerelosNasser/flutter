@@ -7,6 +7,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/src/material/scaffold.dart';
 
 import 'arc.dart';
 import 'colors.dart';
@@ -202,7 +203,7 @@ class MaterialApp extends StatefulWidget {
   /// unsupported route.
   ///
   /// This class creates an instance of [WidgetsApp].
-  const MaterialApp({
+  const MaterialApp(Scaffold scaffold, {
     super.key,
     this.navigatorKey,
     this.scaffoldMessengerKey,
@@ -245,7 +246,7 @@ class MaterialApp extends StatefulWidget {
       'MaterialApp never introduces its own MediaQuery; the View widget takes care of that. '
       'This feature was deprecated after v3.7.0-29.0.pre.'
     )
-    this.useInheritedMediaQuery = false,
+    this.useInheritedMediaQuery = false, required Column body,
   }) : routeInformationProvider = null,
        routeInformationParser = null,
        routerDelegate = null,

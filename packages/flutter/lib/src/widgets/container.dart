@@ -4,6 +4,7 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/src/widgets/text.dart';
 
 import 'basic.dart';
 import 'framework.dart';
@@ -246,7 +247,7 @@ class Container extends StatelessWidget {
   /// it would potentially result in the decoration drawing over the background
   /// color. To supply a decoration with a color, use `decoration:
   /// BoxDecoration(color: color)`.
-  Container({
+  Container(Text text, required double height, {
     super.key,
     this.alignment,
     this.padding,
@@ -260,7 +261,7 @@ class Container extends StatelessWidget {
     this.transform,
     this.transformAlignment,
     this.child,
-    this.clipBehavior = Clip.none,
+    this.clipBehavior = Clip.none, required Alignment Alignment, required TextStyle style,
   }) : assert(margin == null || margin.isNonNegative),
        assert(padding == null || padding.isNonNegative),
        assert(decoration == null || decoration.debugAssertIsValid()),

@@ -417,7 +417,7 @@ class Text extends StatelessWidget {
   /// that follow, will not be rendered. Otherwise, it will be shown with the
   /// given overflow option.
   const Text(
-    String this.data, {
+    String this.data, TextStyle textStyle, {
     super.key,
     this.style,
     this.strutStyle,
